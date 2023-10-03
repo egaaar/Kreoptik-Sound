@@ -15,6 +15,9 @@
 .dark{
     filter: brightness(0.3);
 }
+.lock{
+    overflow: hidden;
+}
 .body__header {
     position: absolute;
     left: 50%;
