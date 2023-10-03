@@ -52,6 +52,7 @@
     let video = document.querySelector('.content__video');
     let theme = document.querySelector('.theme');
     let iframe = video.querySelector('iframe');
+    let body = document.querySelector('.page__body');
     
     for(let elem = 0; elem<content.length; elem++){
         content[elem].addEventListener('mouseover', function(){
@@ -68,14 +69,15 @@
                 video.classList.toggle('video--inactive');
                 video.classList.toggle('video--active'); 
             },500)
-                     
-            theme.classList.add('dark')
+            body.classList.add('lock');
+            theme.classList.add('dark');
         })
     }
     video.addEventListener('click', function(){
         video.classList.toggle('video--inactive');
         video.classList.toggle('video--active');
         theme.classList.remove('dark');
+        body.classList.remove('lock');
         iframe.src = '';
     })
     let media = document.querySelector('.main__media');
@@ -85,17 +87,6 @@
         setTimeout(function(){
             btn.style.display = 'none';
         }, 100)
-        // let content = document.querySelectorAll('.content__aside');
-        // for(let elem of content){
-        //     elem.addEventListener('mouseover', function(){
-        //         elem.style.opacity = 1;
-        //         elem.previousElementSibling.style.filter = 'brightness(0.2)';
-        //     })
-        //     elem.addEventListener('mouseout', function(){
-        //         elem.style.opacity = 0;
-        //         elem.previousElementSibling.style.filter = 'brightness(1)';
-        //     })
-        // }
         anime.classList.remove('anime--inactive');
         anime.classList.add('anime--active');
     })
